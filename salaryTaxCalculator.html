@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Caculadora de imposto salarial</title>
+    <style>
+        body{
+            background-color: cornflowerblue;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+
+        }
+        .box-nav{
+            background-color: gold;
+            padding: 5px;
+            border-radius: 15px;
+        }
+        .box{
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top:60%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            padding: 15px;
+            border-radius: 25px;
+            color: white;
+        }
+        input{
+            padding: 10px;
+            border: none;
+            outline:none;
+            border-radius: 10px;
+            font-size: 15px;
+            width: 50%;
+        }
+        button{
+            padding: 10px;
+            border: none;
+            outline: none;
+            width: 50%;
+            background-color: slateblue;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        button:hover{
+            background-color: cornflowerblue;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box-nav">
+        <h1>Caculadora de imposto salarial</h1>
+        <h2>Disciplina de Algoritmos</h2>
+    </div>
+    <div class="box">
+        <p>Insira o valor de seu salário mensal</p>
+        <input type="number" id='salary_id' placeholder="Digite seu salário">
+        <br><br>
+        <button onclick="taxCalculate()">Enviar</button>
+    </div>
+</body>
+    <script>
+        function taxCalculate() 
+        {
+            var salarioMensal = parseFloat(document.querySelector('#salary_id').value);
+
+            var descontoSalarial;
+
+            if (salarioMensal <= 2112) {
+                descontoSalarial = 0
+            }
+            else if (salarioMensal > 2112 && salarioMensal <= 2826) {
+                descontoSalarial = salarioMensal * 0.075;
+            }
+            else if (salarioMensal > 2826 && salarioMensal <= 3725) {
+                descontoSalarial = salarioMensal * 0.150
+            }
+            else if (salarioMensal > 3725 && salarioMensal <= 4664) {
+                descontoSalarial = salarioMensal * 0.225
+            }
+            else if (salarioMensal > 4664) {
+                descontoSalarial = salarioMensal * 0.275
+            }
+
+            alert("Seu salário tem o desconto de: R$" + descontoSalarial.toFixed(2) + " - Mensal");
+        }
+    </script>
+</html>
