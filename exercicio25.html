@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Prof Roger Bassan | 01</title>
+    <style>
+        body{
+            background-color: cornflowerblue;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+
+        }
+        .box-nav{
+            background-color: gold;
+            padding: 5px;
+            border-radius: 15px;
+        }
+        .box{
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            padding: 15px;
+            border-radius: 15px;
+            color: white;
+        }
+        input{
+            padding: 10px;
+            border: none;
+            outline:none;
+            border-radius: 10px;
+            font-size: 15px;
+            width: 50%;
+        }
+        button{
+            padding: 10px;
+            border: none;
+            outline: none;
+            width: 50%;
+            background-color: slateblue;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        button:hover{
+            background-color: cornflowerblue;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box-nav">
+        <h1>EXERCÍCIO #25
+        
+        </h1>
+        <h2>Disciplina de Algoritmos</h2>
+    </div>
+    <div class="box">
+        <p>faça um programa em javascript que diga se vc é obrigado ou nao a votar
+             </p>
+        <input type="text" id="sg" placeholder="qual seu signo">
+        <br><br>
+        
+        <button onclick="verificar()">Enviar</button>
+    </div>
+
+
+    <script>
+        function verificar()
+        {
+            var texto = document.querySelector('#tx').value;
+            var signo = texto.toUpperCase() + texto.normalize("NFD");
+        
+            switch (signo) 
+            {
+            case "ÁRIES":
+                alert("21 de março a 19 de abril");
+                break;
+            case "TOURO":
+                alert("20 de abril a 20 de maio");
+                break;
+            case "GÊMEOS":
+                alert("21 de maio a 20 de junho");
+            case "CÂNCER":
+                alert("21 de junho a 22 de julho");
+            case "LEÃO":
+                alert("23 de julho a 22 de agosto");
+            case "VIRGEM":
+                alert("23 de agosto a 22 de setembro");
+            case "LIBRA":
+                alert("23 de setembro a 22 de outubro");
+            case "ESCORPIÃO":
+                alert("23 ");       
+            }                                
+        }
+    </script>    
+</body>
+</html>
